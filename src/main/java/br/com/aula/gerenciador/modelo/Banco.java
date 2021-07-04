@@ -16,6 +16,8 @@ import java.util.List;
 public class Banco {
 
 	private static List<Empresa> EMPRESAS = new ArrayList<>();
+	private static List<Usuario> USUARIOS = new ArrayList<>();
+
 	private static Integer ID = 1;
 
 	static {
@@ -30,6 +32,14 @@ public class Banco {
 		Banco.EMPRESAS.add(microsoft);
 		Banco.EMPRESAS.add(linkedin);
 		Banco.EMPRESAS.add(google);
+
+		Usuario fulano = new Usuario("Fulano", "123");
+		Usuario ciclano = new Usuario("Ciclano", "456");
+		Usuario maria = new Usuario("Maria", "789");
+
+		Banco.USUARIOS.add(fulano);
+		Banco.USUARIOS.add(ciclano);
+		Banco.USUARIOS.add(maria);
 
 	}
 
@@ -79,6 +89,16 @@ public class Banco {
 			}
 		}
 
+	}
+
+	public Usuario existeUsuario(String login, String senha) {
+		for (Usuario usuario : Banco.USUARIOS) {
+			if (usuario.ehIgual(login, senha)) {
+				return usuario;
+			}
+		}
+
+		return null;
 	}
 
 }

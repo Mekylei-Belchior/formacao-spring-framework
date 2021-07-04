@@ -10,10 +10,10 @@
 </head>
 <body>
 
-<c:url value="/alteraCadastro" var="linkAlteraCadastroServlet"/>
+<c:url value="/entrada" var="linkEntradaServlet"/>
 
 
-	<form id="form-1" action="${linkAlteraCadastroServlet}"  method="post">
+	<form id="form-1" action="${linkEntradaServlet}"  method="post">
 		<label for="input-1">Id:</label>
 		<input id="input-1" name="id" placeholder="Id" readonly="readonly" type="text" value="${empresa.id}"/>
 	
@@ -22,6 +22,8 @@
 		
 		<label for="input-2">Data:</label>
 		<input id="input-2" name="data" placeholder="Data de Inauguração" type="text" value="${empresa.data}"/>
+		
+		<input id="input-3" name="acao" type="hidden" value="EditaEmpresas"/>
 		
 		<input type="submit" value="Enviar" id="button-1"/>
 	</form>

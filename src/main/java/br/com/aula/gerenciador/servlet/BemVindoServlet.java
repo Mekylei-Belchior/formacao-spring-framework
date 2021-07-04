@@ -21,7 +21,7 @@ import javax.servlet.http.HttpServlet;
  * 
  */
 @WebServlet(urlPatterns = "/bem-vindo")
-public class BemVindo extends HttpServlet {
+public class BemVindoServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 

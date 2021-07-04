@@ -13,7 +13,7 @@
 
 	<ul>
 		<c:forEach items="${empresas}" var="empresa">
-			<li>${empresa.nome} - ${empresa.data} <a href="/gerenciador/editar?id=${empresa.id}">Editar</a> | <a href="/gerenciador/deletar?id=${empresa.id}">Deletar</a></li>
+			<li>${empresa.nome} - ${empresa.data} <a href="/gerenciador/entrada?id=${empresa.id}&acao=CarregaDadosEdicao">Editar</a> | <a href="/gerenciador/entrada?id=${empresa.id}&acao=DeletaEmpresas">Deletar</a></li>
 		</c:forEach>
 	</ul>
 

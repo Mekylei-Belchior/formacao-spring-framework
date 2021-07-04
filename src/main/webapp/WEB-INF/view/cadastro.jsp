@@ -11,15 +11,17 @@
 <title>Formulário de Cadastro</title>
 </head>
 <body>
-<c:url value="/cadastro" var="linkCadastroServlet"/>
+<c:url value="/entrada" var="linkEntradaServlet"/>
 
 
-	<form id="form-1" action="${linkCadastroServlet}"  method="post">
+	<form id="form-1" action="${linkEntradaServlet}"  method="post">
 		<label for="input-1">Nome:</label>
 		<input id="input-1" name="nome" placeholder="Nome" type="text"/>
 		
 		<label for="input-2">Data:</label>
 		<input id="input-2" name="data" placeholder="Data de Inauguração" type="text"/>
+		
+		<input id="input-3" name="acao" type="hidden" value="CadastraEmpresas"/>
 		
 		<input type="submit" value="Enviar" id="button-1"/>
 	</form>

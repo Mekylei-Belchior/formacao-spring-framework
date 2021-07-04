@@ -1,29 +1,16 @@
-package br.com.aula.gerenciador.servlet;
+package br.com.aula.gerenciador.acao;
 
 import java.io.IOException;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import br.com.aula.gerenciador.modelo.Banco;
 
-/**
- * 
- * @author mekylei
- * @version 1.0
- * 
- *          Servlet para mapear a funcionalidade de alteração de cadastro
- *
- */
-@WebServlet("/alteraCadastro")
-public class AlteraCadastroServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+public class EditaEmpresas implements Acao {
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	public String executa(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
 		String nome = request.getParameter("nome");
 		String data = request.getParameter("data");
@@ -32,13 +19,11 @@ public class AlteraCadastroServlet extends HttpServlet {
 
 		try {
 
-			System.out.println("Nome: " + nome + " - " + "Data: " + data);
-
 			if (!nome.isEmpty() && !data.isEmpty()) {
 				Banco banco = new Banco();
 				banco.editaEmpresa(id, nome, data);
 
-				response.sendRedirect("listagem");
+				return "redirect:entrada?acao=ListaEmpresas";
 			} else {
 				throw new ServletException("Os campos de 'Nome' e 'Data' devem ser preenchidos.");
 			}
@@ -46,6 +31,7 @@ public class AlteraCadastroServlet extends HttpServlet {
 		} catch (ServletException e) {
 			System.out.println(e);
 		}
-
+		return "redirect:entrada?acao=EditaEmpresas";
 	}
+
 }

@@ -12,7 +12,7 @@
   
   <filter>
     <filter-name>MF</filter-name>
-    <filter-class>br.com.aula.gerenciador.servlet.MonitoramentoFilter</filter-class>
+    <filter-class>br.com.mekylei.gerenciador.servlet.MonitoramentoFilter</filter-class>
   </filter>
 
   <filter-mapping>
@@ -22,7 +22,7 @@
   
   <filter>
     <filter-name>AF</filter-name>
-    <filter-class>br.com.aula.gerenciador.servlet.AutenticacaoFilter</filter-class>
+    <filter-class>br.com.mekylei.gerenciador.servlet.AutenticacaoFilter</filter-class>
   </filter>
 
   <filter-mapping>
@@ -32,7 +32,7 @@
   
    <filter>
     <filter-name>CF</filter-name>
-    <filter-class>br.com.aula.gerenciador.servlet.ControladorFilter</filter-class>
+    <filter-class>br.com.mekylei.gerenciador.servlet.ControladorFilter</filter-class>
   </filter>
 
   <filter-mapping>

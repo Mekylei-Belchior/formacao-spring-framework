@@ -10,6 +10,8 @@
 <title>Lista de Empresas</title>
 </head>
 <body>
+	<c:import url="logoutParcial.jsp"/>
+	Usuário logado: ${usuarioLogado.login}
 
 	<ul>
 		<c:forEach items="${empresas}" var="empresa">

@@ -2,28 +2,24 @@ package br.com.aula.gerenciador.servlet;
 
 import java.io.IOException;
 
+import javax.servlet.Filter;
+import javax.servlet.FilterChain;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import br.com.aula.gerenciador.acao.Acao;
 
-/**
- * 
- * @author mekylei
- * 
- *         Servlet (Controller) para mapear os fluxos das requisições
- *
- */
-@WebServlet("/entrada")
-public class EntradaServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+public class ControladorFilter implements Filter {
 
-	protected void service(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	public void doFilter(ServletRequest requestServlet, ServletResponse responseServlet, FilterChain chain)
+			throws IOException, ServletException {
+
+		HttpServletRequest request = (HttpServletRequest) requestServlet;
+		HttpServletResponse response = (HttpServletResponse) responseServlet;
 
 		String paramAcao = request.getParameter("acao");
 		String caminho = null;
@@ -46,7 +42,6 @@ public class EntradaServlet extends HttpServlet {
 		} else {
 			response.sendRedirect(tipoDestino[1]);
 		}
-
 	}
 
 }

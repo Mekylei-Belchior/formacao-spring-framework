@@ -8,7 +8,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import br.com.aula.gerenciador.acao.Acao;
 
@@ -28,17 +27,7 @@ public class EntradaServlet extends HttpServlet {
 
 		String paramAcao = request.getParameter("acao");
 		String caminho = null;
-		HttpSession sessao = request.getSession();
-
 		String nomeDaClase = "br.com.aula.gerenciador.acao." + paramAcao;
-		
-		boolean usuarioNaoEstaLogado = (sessao.getAttribute("usuarioLogado") == null);
-		boolean ehUmaAcaoProtegida = !(paramAcao.equals("Login") || paramAcao.equals("LoginForm"));
-		
-		if (usuarioNaoEstaLogado && ehUmaAcaoProtegida) {
-			response.sendRedirect("entrada?acao=LoginForm");
-			return;
-		}
 
 		try {
 			Class<?> classe = Class.forName(nomeDaClase);

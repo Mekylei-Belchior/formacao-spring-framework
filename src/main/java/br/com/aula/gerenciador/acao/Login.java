@@ -25,7 +25,7 @@ public class Login implements Acao {
 		if (usuario != null) {
 			HttpSession sessao = request.getSession();
 			sessao.setAttribute("usuarioLogado", usuario);
-			System.out.println("Login: " + login + " \nSenha: " + senha + " \nStatus: AUTENTICADO");
+			System.out.println("Login: " + login + " \nSenha: **** " + " \nStatus: AUTENTICADO\n");
 
 			return "redirect:entrada?acao=ListaEmpresas";
 		} else {

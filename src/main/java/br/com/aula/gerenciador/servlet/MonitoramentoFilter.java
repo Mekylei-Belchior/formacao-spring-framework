@@ -23,7 +23,7 @@ public class MonitoramentoFilter implements Filter {
 		
 		long tempoFinal = System.currentTimeMillis();
 		
-		System.out.println("Tempo de execução para [ " + acao + " ] -> " + (tempoFinal - tempoInicial) + " milissegundos");
+		System.out.println("Tempo de execução para [ " + acao + " ] -> " + (tempoFinal - tempoInicial) + " milissegundos\n");
 
 	}
 

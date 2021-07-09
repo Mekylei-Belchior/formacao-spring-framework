@@ -11,7 +11,7 @@ import br.com.persistencia.loja.modelo.Categoria;
 import br.com.persistencia.loja.modelo.Produto;
 import br.com.persistencia.loja.util.JPAUtil;
 
-public class CadastroProdutos {
+public class TestaCadastroProdutos {
 
 	public static void main(String[] args) {
 

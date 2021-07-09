@@ -14,9 +14,9 @@ public class Categoria {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String categoria;
-	
+
 	public Categoria() {
-		
+
 	}
 
 	public Categoria(String categoria) {
@@ -37,6 +37,11 @@ public class Categoria {
 
 	public void setCategoria(String categoria) {
 		this.categoria = categoria;
+	}
+
+	@Override
+	public String toString() {
+		return "Categoria [id=" + id + ", categoria=" + categoria + "]";
 	}
 
 }

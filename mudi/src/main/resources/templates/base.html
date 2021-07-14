@@ -4,12 +4,12 @@
 	<link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
 
 	<style>
-		.Logo-container{
+		.logo-container{
 			background-color: #47bcff;
 			color: #fff;
 		}
 	
-		.Logo{
+		.logo{
 			font-family: 'Handlee', cursive;
 			font-size: 2.5rem;
 		}
@@ -17,11 +17,30 @@
 
 </head>
 
-<div th:fragment="Logo" class="Logo-container d-flex justify-content-between mb-3">
-	<span class="Logo">Mudi</span>
-	<span class="mt-3">Login</span>
+<div th:fragment="Logo">
+	<div class="logo-container p-3 d-flex justify-content-between">
+		<span class="logo ml-2">mudi</span>
+		<span class="mt-3 mr-2">
+			<a class="text-light" sec:authorize="!isAuthenticated()" th:href="@{/login}" >Login</a>
+			<a onclick="document.querySelector('#form-login').submit()" class="text-light" sec:authorize="isAuthenticated()" href="#" >Logout</a>
+			<form id="form-login" th:action="@{/logout}" method="POST"/></form>
+		</span>
+	</div>
+	<div>
+		<ul class="nav">
+			  <li class="nav-item">
+			    <a class="nav-link" sec:authorize="isAuthenticated()" th:href="@{/home}">Home</a>
+			  </li>
+			  <li class="nav-item">
+			    <a class="nav-link" sec:authorize="isAuthenticated()" th:href="@{/usuario/pedidos}">Meus pedidos</a>
+			  </li>
+			  <li class="nav-item">
+			    <a class="nav-link" sec:authorize="isAuthenticated()" th:href="@{/oferta}">Ofertas</a>
+			  </li>
+		</ul>
+	</div>
 </div>
 
-<div th:fragment="titulo(valor)" class="container-fluid bg-dark text-light p-5 mb-0">
+<div th:fragment="titulo(valor)" class="container-fluid bg-dark text-light p-5 mb-0 mt-2">
 	<h1 class="display-4" th:text="${valor}"></h1>
 </div>

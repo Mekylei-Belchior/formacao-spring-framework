@@ -12,7 +12,6 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -32,11 +31,9 @@ public class Topico {
 	private StatusTopico status = StatusTopico.NAO_RESPONDIDO;
 
 	@ManyToOne
-	@JoinColumn(name = "autor_id")
 	private Usuario autor;
 	
 	@ManyToOne
-	@JoinColumn(name = "curso_id")
 	private Curso curso;
 
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "topico", fetch = FetchType.LAZY)

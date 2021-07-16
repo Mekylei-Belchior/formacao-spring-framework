@@ -6,7 +6,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -22,11 +21,9 @@ public class Resposta {
 	private Boolean solucao = false;
 	
 	@ManyToOne
-	@JoinColumn(name = "topico_id")
 	private Topico topico;
 	
 	@ManyToOne
-	@JoinColumn(name = "autor_id")
 	private Usuario autor;
 
 	@Override

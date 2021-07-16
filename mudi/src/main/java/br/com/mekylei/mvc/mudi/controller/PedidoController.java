@@ -21,7 +21,7 @@ import br.com.mekylei.mvc.mudi.repository.UserRepository;
 public class PedidoController {
 
 	@Autowired
-	PedidoRepository pedidoRepository;
+	private PedidoRepository pedidoRepository;
 
 	@Autowired
 	private UserRepository userRepository;

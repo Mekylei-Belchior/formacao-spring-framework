@@ -93,6 +93,20 @@ Repositório da formação Spring Framework.
 
 ## MÓDULO 4 - API REST e Testes com Spring Boot  
 
+**(Curso - 8h) Spring Boot API REST: Construa uma API**  
+
+- Introdução ao Spring Boot Ver primeiro vídeo  
+- Publicando Endpoints  
+- Usando Spring Data  
+- Trabalhando com POST  
+- Validação com Bean Validation  
+- Métodos PUT, DELETE e tratamento de erro  
+
+
+
+
+
+
 
 
 

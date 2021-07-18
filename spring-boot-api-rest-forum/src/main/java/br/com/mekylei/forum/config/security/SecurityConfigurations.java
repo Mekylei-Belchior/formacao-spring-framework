@@ -49,6 +49,9 @@ public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
 				.antMatchers(HttpMethod.GET, "/topicos").permitAll()
 				.antMatchers(HttpMethod.GET, "/topicos/*").permitAll()
 				.antMatchers(HttpMethod.POST, "/auth").permitAll()
+				// Habilitado para todos somente para teste.
+				// Em ambiente de produção deve ser parametrizado a permissão de acesso.
+				.antMatchers(HttpMethod.GET, "/actuator/**").permitAll()
 				.anyRequest().authenticated()
 				.and().csrf().disable()
 				.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)

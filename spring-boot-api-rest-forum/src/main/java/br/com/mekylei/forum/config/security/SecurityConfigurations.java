@@ -48,9 +48,7 @@ public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
 			.authorizeRequests()
 				.antMatchers(HttpMethod.GET, "/topicos").permitAll()
 				.antMatchers(HttpMethod.GET, "/topicos/*").permitAll()
-				.antMatchers(HttpMethod.POST, "/auth").permitAll()
-				// Habilitado para todos somente para teste.
-				// Em ambiente de produção deve ser parametrizado a permissão de acesso.
+				.antMatchers(HttpMethod.POST, "/auth").permitAll() // reajustar para utilizar em produção
 				.antMatchers(HttpMethod.GET, "/actuator/**").permitAll()
 				.anyRequest().authenticated()
 				.and().csrf().disable()
@@ -61,7 +59,7 @@ public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
 	// Configurações de recursos estáticos (js, css, imagens, etc.)
 	@Override
 	public void configure(WebSecurity web) throws Exception {
-		
+		web.ignoring().antMatchers("/**.html", "/v2/api-docs", "/webjars/**", "/configurations/**", "/swagger-resources/**", "/swagger-ui/**");
 	}
 	
 }

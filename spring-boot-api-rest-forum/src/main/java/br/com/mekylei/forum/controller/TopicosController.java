@@ -46,7 +46,6 @@ public class TopicosController {
 	private UsuarioRepository usuarioRepository;
 
 	@GetMapping
-//	@Cacheable(value = "listaTopicos")
 	public Page<TopicoDto> lista(@RequestParam(required = false) String nomeCurso,
 			@PageableDefault(page = 0, size = 10, sort = "id", direction = Direction.DESC) Pageable paginacao) {
 
@@ -60,7 +59,6 @@ public class TopicosController {
 
 	@PostMapping
 	@Transactional
-//	@CacheEvict(value = "listaTopicos", allEntries = true)
 	public ResponseEntity<TopicoDto> cadastrarTopico(@RequestBody @Valid TopicoForm form,
 			UriComponentsBuilder uriBuilder) {
 		Topico topico = form.toTopico(cursoRepository, usuarioRepository);
@@ -84,7 +82,6 @@ public class TopicosController {
 
 	@PutMapping("/{id}")
 	@Transactional
-//	@CacheEvict(value = "listaTopicos", allEntries = true)
 	public ResponseEntity<TopicoDto> atualizar(@PathVariable Long id, @RequestBody @Valid AtualizaTopicoForm form) {
 		Optional<Topico> optional = topicoRepository.findById(id);
 
@@ -98,7 +95,6 @@ public class TopicosController {
 
 	@DeleteMapping("/{id}")
 	@Transactional
-//	@CacheEvict(value = "listaTopicos", allEntries = true)
 	public ResponseEntity<?> deletar(@PathVariable Long id) {
 		Optional<Topico> topico = topicoRepository.findById(id);
 

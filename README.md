@@ -5,7 +5,7 @@ Repositório da formação Spring Framework.
 
 **(Curso - 10h) Java Servlet: Fundamentos da programação web Java**
 
-- Fundamentos da Web e a API de Servlets Ver primeiro vídeo  
+- Fundamentos da Web e a API de Servlets  
 - Trabalhando com POST e GET  
 - Definindo o nosso modelo  
 - Páginas dinâmicas com JSP  
@@ -26,7 +26,7 @@ Repositório da formação Spring Framework.
 
 **(Curso - 8h) Maven: Gerenciamento de dependências e build de aplicações Java**  
 
-- Conhecendo o Maven Ver primeiro vídeo  
+- Conhecendo o Maven  
 - Projetos com Maven  
 - Dependências no Maven  
 - Build no Maven  
@@ -50,7 +50,7 @@ Repositório da formação Spring Framework.
 - Configurações e EntityManager  
 - Mapeando entidades  
 - Ciclo de vida de uma entidade  
-- Consultas com JPQL
+- Consultas com JPQL  
 
 **(Curso - 10h) Java e JPA: Consultas avançadas, performance e modelos complexos**  
 
@@ -95,7 +95,7 @@ Repositório da formação Spring Framework.
 
 **(Curso - 8h) Spring Boot API REST: Construa uma API**  
 
-- Introdução ao Spring Boot Ver primeiro vídeo  
+- Introdução ao Spring Boot  
 - Publicando Endpoints  
 - Usando Spring Data  
 - Trabalhando com POST  
@@ -104,10 +104,18 @@ Repositório da formação Spring Framework.
 
 **(Curso - 12h) Spring Boot API Rest: Segurança da API, Cache e Monitoramento**  
 
-- Paginação e ordenação de recursos Ver primeiro vídeo
-- Melhorando desempenho com Spring Cache
-- Proteção com Spring Security
-- Gerando token com JWT
-- Autenticação via JWT
-- Monitoramento com Spring Boot Actuator
+- Paginação e ordenação de recursos  
+- Melhorando desempenho com Spring Cache  
+- Proteção com Spring Security  
+- Gerando token com JWT  
+- Autenticação via JWT  
+- Monitoramento com Spring Boot Actuator  
 - Documentação da API com Swagger  
+
+**(Curso - 8h) Spring Boot e Teste: Profiles, Testes e Deploy**  
+
+- Mais segurança  
+- Profiles  
+- Teste automatizados  
+- Deploy  
+- Deploy com Docker e na nuvem  
